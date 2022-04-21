@@ -47,23 +47,27 @@ public class Persona {
     //private Set<Experiencia> experiencia = new HashSet<>();
     private List<Experiencia> experiencias;
    
-    @JsonIgnore
-    @OneToMany(mappedBy = "persona")
+    //@JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "persona_id")
     //private Set<Educacion> educacion = new HashSet<>();   
     private List<Educacion> educacion;
     
-    @JsonIgnore
-    @OneToMany(mappedBy = "persona")
+    //@JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "persona_id")
     //private Set<Curso> curso = new HashSet<>();    
     private List<Curso> cursos;
     
-    @JsonIgnore
-    @OneToMany(mappedBy = "persona")    
+    //@JsonIgnore
+    @JoinColumn(name = "persona_id")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)    
     //private Set<Skill> skill = new HashSet<>(); 
     private List<Skill> skills;
     
-    @JsonIgnore
-    @OneToMany(mappedBy = "persona")
+    //@JsonIgnore
+    @JoinColumn(name = "persona_id")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     //private Set<Proyecto> proyecto = new HashSet<>(); 
     private List<Proyecto> proyectos;      
 

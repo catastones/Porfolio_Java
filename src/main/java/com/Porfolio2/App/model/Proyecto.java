@@ -28,7 +28,7 @@ public class Proyecto {
     private String url_img;
     
       
-    @ManyToOne
-    @JoinColumn(name = "persona_id")
-    private Persona persona;  
+    //@ManyToOne
+    //@JoinColumn(name = "persona_id")
+    //private Persona persona;  
 }

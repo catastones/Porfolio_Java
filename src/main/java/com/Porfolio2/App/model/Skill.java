@@ -22,7 +22,7 @@ public class Skill {
     private String habilidad;
     private int porcentaje;
     
-     @ManyToOne
-    @JoinColumn(name = "persona_id")
-    private Persona persona; 
+     //@ManyToOne
+   // @JoinColumn(name = "persona_id")
+   // private Persona persona; 
 }

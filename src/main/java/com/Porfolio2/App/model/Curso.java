@@ -27,9 +27,9 @@ public class Curso {
     private Date fecha_final;
     private String url_logo;
     
-    @ManyToOne
-    @JoinColumn(name = "persona_id")
-    private Persona persona; 
+    //@ManyToOne
+    //@JoinColumn(name = "persona_id")
+    //private Persona persona; 
      
    @ManyToOne
     @JoinColumn(name = "estado_id")
