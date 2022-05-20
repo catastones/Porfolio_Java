@@ -50,6 +50,7 @@ public class Controller {
         return persoServ.VerPersonas();
         
     }
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping ("/verpersona/{id}")
     @ResponseBody
     public Persona VerPerso(@PathVariable Long id){

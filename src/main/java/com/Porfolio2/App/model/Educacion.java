@@ -28,10 +28,11 @@ public class Educacion {
     private String url_logo;
      
     //@ManyToOne
-   // @JoinColumn(name = "persona_id")
+   //@JoinColumn(name = "persona_id")
     //private Persona persona; 
     
+    
     @ManyToOne
-    @JoinColumn(name = "estado_id")
+   @JoinColumn(name = "estado_id")
     private Estado_carrera estado; 
 }

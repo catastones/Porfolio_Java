@@ -40,6 +40,7 @@ public class Persona {
     private String link_github;
     private String link_linkedin;
     private String acerca;
+    private String ocupacion;
     
     //@JsonIgnore 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
