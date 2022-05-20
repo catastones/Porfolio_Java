@@ -5,9 +5,9 @@
  */
 package com.Porfolio2.App.controller;
 
-import com.Porfolio2.App.model.Experiencia;
+
 import com.Porfolio2.App.model.Persona;
-import com.Porfolio2.App.service.IExperienciaService;
+
 import com.Porfolio2.App.service.IPersonaService;
 
 import java.util.List;
@@ -31,8 +31,7 @@ public class Controller {
    @Autowired   
     public IPersonaService  persoServ;
    
-   @Autowired   
-   public IExperienciaService expeServ;
+ 
     
     
     @CrossOrigin(origins = "http://localhost:4200")
@@ -63,18 +62,6 @@ public class Controller {
         return "Hola mundo App Porfolio2";
     }
     
-     /* @param expe-*/
-    @PostMapping ("/addexperiencia")
-    public void addExperiencia(@RequestBody Experiencia expe){
-        
-        expeServ.CrearExperiencia(expe);
-    }
-    
-    @GetMapping ("/verexperiencia/{id}")
-    @ResponseBody
-    public Experiencia VerExperiencia(@PathVariable Long id){
-        return expeServ.buscarExperiencia(id);
-        
-    }
+
    
 }
