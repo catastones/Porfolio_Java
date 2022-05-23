@@ -6,7 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter @Setter
 @Entity
 @Table(name = "usuarios")
 public class Usuario implements Serializable {
@@ -14,6 +17,7 @@ public class Usuario implements Serializable {
     private String idUsu;
     private String nombreUsu;
     private String passUsu;
+    private String usuario;
      @Transient
     private String token;
 
@@ -24,9 +28,15 @@ public class Usuario implements Serializable {
     public void setIdUsu(String idUsu) {
         this.idUsu = idUsu;
     }
-
-    public String getNombreUsu() {
+ public String getusuario() {
         return nombreUsu;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+    public String getUsuario() {
+        return usuario;
     }
 
     public void setNombreUsu(String nombreUsu) {
@@ -48,6 +58,8 @@ public class Usuario implements Serializable {
     public void setToken(String token) {
         this.token = token;
     }
+
+   
     
     
 }

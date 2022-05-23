@@ -1,18 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.Porfolio2.App.repository;
 
 import com.Porfolio2.App.model.Usuario;
-import java.io.Serializable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author Cristian
  */
-public interface UserRepository extends JpaRepository <Usuario , Serializable> {
-    public abstract Usuario findByUsuario(String usuario);
+@Repository
+public interface UserRepository extends JpaRepository <Usuario , Long> {
+    public Usuario findByUsuario(String nombre_usu);
 }

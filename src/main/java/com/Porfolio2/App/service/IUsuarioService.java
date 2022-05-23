@@ -5,10 +5,11 @@
  */
 package com.Porfolio2.App.service;
 
+import com.Porfolio2.App.model.Usuario;
 /**
  *
  * @author Cristian
  */
 public interface IUsuarioService {
-    
+     public Usuario buscarUsuario(String nombre_usu);
 }
