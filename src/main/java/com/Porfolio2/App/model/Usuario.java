@@ -9,13 +9,13 @@ import javax.persistence.Transient;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter @Setter
+
 @Entity
 @Table(name = "usuarios")
-public class Usuario implements Serializable {
+public class Usuario implements Serializable{
     @Id
     private String idUsu;
-    private String nombreUsu;
+   
     private String passUsu;
     private String usuario;
      @Transient
@@ -25,12 +25,7 @@ public class Usuario implements Serializable {
         return idUsu;
     }
 
-    public void setIdUsu(String idUsu) {
-        this.idUsu = idUsu;
-    }
- public String getusuario() {
-        return nombreUsu;
-    }
+    
 
     public void setUsuario(String usuario) {
         this.usuario = usuario;
@@ -39,9 +34,7 @@ public class Usuario implements Serializable {
         return usuario;
     }
 
-    public void setNombreUsu(String nombreUsu) {
-        this.nombreUsu = nombreUsu;
-    }
+  
 
     public String getPassUsu() {
         return passUsu;

@@ -5,11 +5,12 @@
  */
 package com.Porfolio2.App.service;
 
-import com.Porfolio2.App.model.Usuario;
+import com.Porfolio2.App.model.Users;
+
 /**
  *
  * @author Cristian
  */
-public interface IUsuarioService {
-     public Usuario buscarUsuario(String usuario);
+public interface IUsersServise {
+    public Users buscarUsuario(String usuario);
 }

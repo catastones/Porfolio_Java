@@ -5,7 +5,9 @@
  */
 package com.Porfolio2.App.controller;
 
+import com.Porfolio2.App.model.Users;
 import com.Porfolio2.App.model.Usuario;
+import com.Porfolio2.App.service.IUsersServise;
 import com.Porfolio2.App.service.IUsuarioService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -30,24 +33,31 @@ import org.springframework.web.bind.annotation.RestController;
 public class ControllerUser {
     //
     @Autowired   
-    public IUsuarioService userService;
+    public IUsersServise userService;
     
+    /**
+     *
+     * @param usuario
+     * @param Pass
+     * @return
+     */
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping ("/login")
-    public void getUser(@RequestBody String User, @RequestBody String Pass ){
+    public Users getUser(@RequestParam("usuario") String usuario, @RequestParam("Pass") String Pass ){
         
-        Usuario user = userService.buscarUsuario(User);
+        Users user = userService.buscarUsuario(usuario);
         
         if (user != null) {
-            if (user.getPassUsu().equals(Pass)) {
-                String token = getJWTToken(User);
-                user.setUsuario(User);
+            if (user.getPass().equals(Pass)) {
+                String token = getJWTToken(usuario);
+                user.setUsuario(usuario);
                 user.setToken(token);                
             }
-        }       
+        } 
+        return user;
 
     }
-    private String getJWTToken(String username) {
+    private String getJWTToken(String usuario) {
         String secretKey = "mySecretKey";
         List<GrantedAuthority> grantedAuthorities = AuthorityUtils
                 .commaSeparatedStringToAuthorityList("ROLE_USER");
@@ -55,7 +65,7 @@ public class ControllerUser {
         String token = Jwts
                 .builder()
                 .setId("id")
-                .setSubject(username)
+                .setSubject(usuario)
                 .claim("authorities",
                         grantedAuthorities.stream()
                                 .map(GrantedAuthority::getAuthority)

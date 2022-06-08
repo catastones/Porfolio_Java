@@ -11,9 +11,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.UnsupportedJwtException;
 import java.io.IOException;
-import static java.lang.Math.log;
-import static java.lang.StrictMath.log;
-import static java.rmi.server.LogStream.log;
+
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.servlet.FilterChain;
@@ -57,9 +55,7 @@ public class JWTAuthorizationFilter extends OncePerRequestFilter {
 
     private boolean checkJWTToken(HttpServletRequest request, HttpServletResponse res) {
         String authenticationHeader = request.getHeader(HEADER);
-        if (authenticationHeader == null || !authenticationHeader.startsWith(PREFIX))
-            return false;
-        return true;
+        return !(authenticationHeader == null || !authenticationHeader.startsWith(PREFIX));
     }
 
      private Claims validateToken(HttpServletRequest request) {
