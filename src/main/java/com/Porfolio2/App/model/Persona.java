@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.Getter;
@@ -70,6 +71,10 @@ public class Persona {
     @JoinColumn(name = "persona_id")
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     //private Set<Proyecto> proyecto = new HashSet<>(); 
-    private List<Proyecto> proyectos;      
+    private List<Proyecto> proyectos;    
+    
+    @ManyToOne
+    @JoinColumn(name = "redes_id")
+    private Redes redes;
 
 }

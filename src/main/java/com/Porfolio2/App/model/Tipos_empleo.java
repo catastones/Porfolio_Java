@@ -25,7 +25,7 @@ public class Tipos_empleo {
     
     private String type_empleo;
     
-     @JsonIgnore
+    @JsonIgnore
     @OneToMany(mappedBy = "typejob")
     private Set<Experiencia> experiencias = new HashSet<>();
 }
