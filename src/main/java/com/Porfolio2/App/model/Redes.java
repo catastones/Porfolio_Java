@@ -36,7 +36,7 @@ public class Redes {
     private String link_facebook;
     private String link_instagram;
     
-    @JsonIgnore
-    @OneToMany(mappedBy = "redes")
-    private Set<Persona> persona = new HashSet<>();
+//    @JsonIgnore
+//    @OneToMany(mappedBy = "redes")
+//    private Set<Persona> persona = new HashSet<>();
 }

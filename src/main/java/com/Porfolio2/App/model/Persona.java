@@ -38,8 +38,6 @@ public class Persona {
     private String provincia;
     private String url_img_perfil;
     private String url_img_portada;
-    private String link_github;
-    private String link_linkedin;
     private String acerca;
     private String ocupacion;
     
@@ -73,8 +71,9 @@ public class Persona {
     //private Set<Proyecto> proyecto = new HashSet<>(); 
     private List<Proyecto> proyectos;    
     
-    @ManyToOne
-    @JoinColumn(name = "redes_id")
-    private Redes redes;
+    @JoinColumn(name = "persona_id")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    //private Set<Proyecto> proyecto = new HashSet<>(); 
+    private List<Redes> redes;    
 
 }
