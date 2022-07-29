@@ -8,6 +8,7 @@ package com.Porfolio2.App.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -29,11 +30,17 @@ public class Redes {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
+    @Column(length = 500)
     private String link_github;
+    @Column(length = 500)
     private String link_linkedin;
+    @Column(length = 500)
     private String link_yuotube;
+    @Column(length = 500)
     private String link_twitter;
+    @Column(length = 500)
     private String link_facebook;
+    @Column(length = 500)
     private String link_instagram;
     
 //    @JsonIgnore

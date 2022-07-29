@@ -5,6 +5,7 @@
  */
 package com.Porfolio2.App.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,7 +27,28 @@ public class Users {
     private String pass;
     @Transient
     private String token;
+    private Boolean aut;
+    
+   
+    private String status;
+    
+    public Boolean getAut() {
+        return aut;
+    }
 
+    public void setAut(Boolean aut) {
+        this.aut = aut;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+  
+    
     public Long getId() {
         return id;
     }

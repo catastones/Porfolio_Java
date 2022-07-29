@@ -3,6 +3,7 @@ package com.Porfolio2.App.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,7 +26,9 @@ public class Experiencia {
     private String empresa;
     private String tareas;
     private Date fecha_inicio;
-    private Date fecha_final;    
+    private Date fecha_final;  
+    
+    @Column(length = 500)
     private String url_img_logo;
     
     //@ManyToOne

@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -36,7 +37,9 @@ public class Persona {
     private String email;
     private String localidad;
     private String provincia;
+    @Column(length = 500)
     private String url_img_perfil;
+    @Column(length = 500)
     private String url_img_portada;
     private String acerca;
     private String ocupacion;

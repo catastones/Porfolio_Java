@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 public class PersonaService implements IPersonaService {
     
     @Autowired 
+    
     public PersonaRepository personaRepo;
     
     @Override

@@ -6,9 +6,9 @@
 package com.Porfolio2.App.controller;
 
 import com.Porfolio2.App.model.Users;
-import com.Porfolio2.App.model.Usuario;
+
 import com.Porfolio2.App.service.IUsersServise;
-import com.Porfolio2.App.service.IUsuarioService;
+
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import java.util.Date;
@@ -19,7 +19,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -50,8 +50,12 @@ public class ControllerUser {
         if (user != null) {
             if (user.getPass().equals(Pass)) {
                 String token = getJWTToken(usuario);
+                user.setPass("");
                 user.setUsuario(usuario);
-                user.setToken(token);                
+                user.setToken(token); 
+                user.setAut(true);
+                user.setStatus("Ok");
+                
             }
         } 
         return user;

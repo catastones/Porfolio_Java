@@ -26,8 +26,9 @@ public class AppApplication {
 					.addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
 					.authorizeRequests()
 					.antMatchers(HttpMethod.POST, "/api/login").permitAll()
-                                        .antMatchers("/verpersona/**").permitAll()                      
-                               
+                                        .antMatchers("/api/verpersona/**").permitAll()                      
+                                        .antMatchers("/api/estadocarrera").permitAll() 
+                                        .antMatchers("/api/tiposempleos").permitAll() 
 					.anyRequest().authenticated();
 		}
 	}
