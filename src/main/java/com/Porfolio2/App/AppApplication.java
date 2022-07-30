@@ -40,7 +40,7 @@ public class AppApplication {
 	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurer() {
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedOrigins("https://porfoliocristian-ed2f1.web.app/").allowedMethods("*").allowedHeaders("*");
+				registry.addMapping("/**").allowedOrigins("https://porfoliocristian-ed2f1.web.app").allowedMethods("*").allowedHeaders("*");
 			}
 		};
 	}
