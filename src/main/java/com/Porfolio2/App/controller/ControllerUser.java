@@ -41,7 +41,7 @@ public class ControllerUser {
      * @param Pass
      * @return
      */
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://porfoliocristian-ed2f1.web.app/")
     @PostMapping ("/login")
     public Users getUser(@RequestParam("usuario") String usuario, @RequestParam("Pass") String Pass ){
         

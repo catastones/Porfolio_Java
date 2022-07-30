@@ -35,12 +35,11 @@ public class Controller {
     
   
    @Autowired   
-    public IPersonaService  persoServ;
-   
+    public IPersonaService  persoServ; 
  
     
     
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://porfoliocristian-ed2f1.web.app/")
     @PostMapping ("/addpersona")
     public void addPersona(@RequestBody Persona perso){
         persoServ.CrearPersona(perso);
@@ -54,7 +53,7 @@ public class Controller {
         return persoServ.VerPersonas();
         
     }
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://porfoliocristian-ed2f1.web.app/")
     @GetMapping ("/verpersona/{id}")
     @ResponseBody
     public Persona VerPerso(@PathVariable Long id){
@@ -72,7 +71,7 @@ public class Controller {
     @Autowired   
     public ITiposService  tipoServ;
     
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://porfoliocristian-ed2f1.web.app/")
     @GetMapping ("/tiposempleos")
     @ResponseBody
     public List<Tipos_empleo> ListTipos(){
@@ -83,7 +82,7 @@ public class Controller {
     @Autowired   
     public IEstadoService  estadoServ;
     
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://porfoliocristian-ed2f1.web.app/")
     @GetMapping ("/estadocarrera")
     @ResponseBody
     public List<Estado_carrera> ListEstados(){
