@@ -41,6 +41,7 @@ public class Persona {
     private String url_img_perfil;
     @Column(length = 500)
     private String url_img_portada;
+    @Column(length = 1000)
     private String acerca;
     private String ocupacion;
     
